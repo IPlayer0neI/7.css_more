@@ -1,0 +1,140 @@
+<section class="component">
+    <h3 id="taskbar">TaskBar</h3>
+    <div>
+        <p>
+            <code>task-bar-app</code> has default hover and active styles, along with three classes that can compose it:
+            <code>.active</code>, to make the app style active; <code>.focus</code>,
+            to make the app style in the foreground, <code>right-click</code>, and <code>.super-focus</code> for app style in the foreground plus
+            hover.
+        </p>
+
+        <p>
+            Start-button has start-button-bright to shine
+        </p>
+
+        <%- example(` <div style="position: relative; width: 500px; height: 30px">
+            <div class="task-bar">
+                <div class="start-button">
+                </div>
+                <div class="task-bar-items">
+                    <div class="task-bar-app active focus">
+                        <img src="./cmd.webp" />
+                    </div>
+                    <div class="task-bar-app  right-click">
+                        <img src="./calc.webp" />
+                    </div>
+                </div>
+                <div class="task-bar-tray">
+                    <div class="task-bar-tray-item flag active">
+                    </div>
+                    <div class="task-bar-tray-item">
+                        <div class="network">
+                            <span style="height: 3px;"></span>
+                            <span style="height: 6px;"></span>
+                            <span style="height: 9px;"></span>
+                            <span style="height: 12px;"></span>
+                            <span style="height: 15px;"></span>
+                        </div>
+                    </div>
+                    <div class="task-bar-tray-item">
+                        <div class="battery">
+                            <div class="percentage"></div>
+                        </div>
+                    </div>
+                    <div class="task-bar-tray-item calendar">
+                        <span>01:02</span>
+                        <span>24/03/2025</span>
+                    </div>
+                    <div class="task-bar-tray-item show-desktop">
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    `) %>
+
+    <%- example(` <div style="position: relative; width: 500px; height: 30px">
+        <div class="task-bar">
+            <div class="start-button start-button-bright">
+            </div>
+            <div class="task-bar-items">
+                <div class="task-bar-app active focus super-focus">
+                    <img src="./cmd.webp" />
+                </div>
+                <div class="task-bar-app active">
+                    <img src="./calc.webp" />
+                </div>
+            </div>
+            <div class="task-bar-tray">
+                <div class="task-bar-tray-item flag active">
+                </div>
+                <div class="task-bar-tray-item">
+                    <div class="network">
+                        <span style="height: 3px;"></span>
+                        <span style="height: 6px;"></span>
+                        <span style="height: 9px;"></span>
+                        <span style="height: 12px;"></span>
+                        <span style="height: 15px;"></span>
+                    </div>
+                </div>
+                <div class="task-bar-tray-item">
+                    <div class="battery">
+                        <div class="percentage"></div>
+                    </div>
+                </div>
+                <div class="task-bar-tray-item calendar">
+                    <span>01:02</span>
+                    <span>24/03/2025</span>
+                </div>
+                <div class="task-bar-tray-item show-desktop active">
+
+                </div>
+            </div>
+        </div>
+        </div>
+        `) %>
+        <%- example(` <div style="position: relative; width: 500px; height: 30px">
+            <div class="task-bar">
+                <div class="start-button start-button-bright">
+                </div>
+                <div class="task-bar-items">
+                    <div class="task-bar-app active focus super-focus">
+                        <img src="./cmd.webp" />
+                    </div>
+                    <div class="task-bar-app active">
+                        <img src="./calc.webp" />
+                    </div>
+                    <div class="task-bar-app">
+                        <img src="./notepad.webp" />
+                    </div>
+                </div>
+                <div class="task-bar-tray">
+                    <div class="task-bar-tray-item flag active">
+                    </div>
+                    <div class="task-bar-tray-item active">
+                        <div class="network">
+                            <span style="height: 3px;"></span>
+                            <span style="height: 6px;"></span>
+                            <span style="height: 9px;"></span>
+                            <span style="height: 12px;"></span>
+                            <span style="height: 15px;"></span>
+                        </div>
+                    </div>
+                    <div class="task-bar-tray-item active">
+                        <div class="battery">
+                            <div class="percentage"></div>
+                        </div>
+                    </div>
+                    <div class="task-bar-tray-item calendar active">
+                        <span>01:02</span>
+                        <span>24/03/2025</span>
+                    </div>
+                    <div class="task-bar-tray-item show-desktop active">
+    
+                    </div>
+                </div>
+            </div>
+            </div>
+            `) %>
+        </div>
+</section>

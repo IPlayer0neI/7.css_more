@@ -3,10 +3,7 @@
     bottom: 0;
     width: 100%;
     height: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     backdrop-filter: blur(4px);
     background-image:
@@ -18,7 +15,6 @@
 
 .start-button {
     width: 57px;
-    -ms-flex-negative: 0;
     flex-shrink: 0;
     display: flex;
     justify-content: flex-start;
@@ -27,13 +23,13 @@
     background-size: 57px;
 }
 
+.start-button-bright:hover {
+    background-position-y: -66px;
+}
+
 .task-bar-items {
     width: 100%;
     display: flex;
-}
-
-.start-button-bright {
-    background-position-y: -66px;
 }
 
 .task-bar-app {
@@ -43,7 +39,6 @@
     border: 1px solid transparent;
     border-top: none;
     padding: 0;
-    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,6 +101,14 @@
     transition: background-color .3s;
 }
 
+.task-bar-app.right-click::before {
+    background-position-x: center, 0, calc(100% - 1px), 1px, 100%, center;
+    background-image: radial-gradient(circle at bottom, rgba(191, 220, 250, .6666666667) 5%, transparent 15%), radial-gradient(circle at 0 50%, rgba(0, 0, 0, .3333333333), transparent), radial-gradient(circle at 100% 50%, rgba(0, 0, 0, .3333333333), transparent), radial-gradient(circle at 0 50%, hsla(0, 0%, 100%, .3333333333), transparent), radial-gradient(circle at 100% 50%, hsla(0, 0%, 100%, .3333333333), transparent), linear-gradient(180deg, transparent 5%, rgba(0, 0, 0, .3333333333), transparent 95%);
+    background-size: 100%, 1px, 1px, 1px, 1px, 100%;
+    background-repeat: no-repeat;
+    transition: none;
+}
+
 .task-bar-app::after {
     left: 0;
     right: 0;
@@ -118,6 +121,16 @@
     height: 100%;
     opacity: 1;
     z-index: -1;
+}
+
+.task-bar-app.active:hover:after {
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, .5333333333);
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .5333333333);
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, .5019607843) 10%, hsla(0, 0%, 100%, .2), hsla(0, 0%, 100%, .6) 80%);
+    transition: background-color .3s;
+    width: 100%;
+    opacity: 1;
 }
 
 .task-bar-app:hover:after {
@@ -134,7 +147,7 @@
     z-index: -1;
 }
 
-.task-bar-app.active::after {
+.task-bar-app.active.focus::after {
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, .5333333333);
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .5333333333);
@@ -142,6 +155,11 @@
     transition: background-color .3s;
     width: 100%;
     opacity: 1;
+}
+
+.task-bar-app.active.focus.super-focus:hover:after {
+    background-color: hsla(0, 0%, 100%, .5333333333);
+    transition: background-color .3s;
 }
 
 .task-bar-tray {
@@ -208,7 +226,7 @@
     transition: none;
 }
 
-.task-bar-tray-item.active::before {
+.task-bar-tray-item.active:active:before {
     background-position-x: center, 0, calc(100% - 1px), 1px, 100%, center;
     background-image: radial-gradient(circle at bottom, rgba(191, 220, 250, .6666666667) 5%, transparent 15%), radial-gradient(circle at 0 50%, rgba(0, 0, 0, .3333333333), transparent), radial-gradient(circle at 100% 50%, rgba(0, 0, 0, .3333333333), transparent), radial-gradient(circle at 0 50%, hsla(0, 0%, 100%, .3333333333), transparent), radial-gradient(circle at 100% 50%, hsla(0, 0%, 100%, .3333333333), transparent), linear-gradient(180deg, transparent 5%, rgba(0, 0, 0, .3333333333), transparent 95%);
     background-size: 100%, 1px, 1px, 1px, 1px, 100%;
@@ -263,10 +281,10 @@
     padding: 1px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .4);
     background: rgba(0, 0, 0, .4);
-    width: 12px;
+    width: 12.2px;
     height: 16.6px;
     position: relative;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .battery::before {
@@ -284,12 +302,12 @@
     opacity: unset;
 }
 
-.battery>.percentage {
+.battery > .percentage {
     background: #fff;
-    position: relative;
-    top: 50%;
     width: 100%;
     height: 50%;
+    position: relative;
+    top: 51%;
 }
 
 .task-bar-tray-item.calendar {
@@ -307,12 +325,15 @@
 .task-bar-tray-item.show-desktop {
     margin: 0;
     border-radius: 1px;
-    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .6), inset 0 0 0 2px hsla(0, 0%, 93.3%, .4666666667);
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .6), inset 0 0 0 2px hsla(0, 0%, 93.3%, .4666666667);
     background: linear-gradient(180deg, hsla(0, 0%, 100%, .2), rgba(0, 0, 0, .2), hsla(0, 0%, 100%, .1333333333)), radial-gradient(circle at 150% 100%, transparent 65% 70%, hsla(0, 0%, 100%, .2) 75%);
     min-width: 18px;
 }
 
-.task-bar-tray-item.show-desktop.active:hover{
+.task-bar-tray-item.show-desktop.active:hover {
     background-color: hsla(0, 0%, 100%, .2);
+}
+
+.task-bar-tray-item.show-desktop.active:active:hover {
+    background-color: hsla(0, 0%, 100%, .5333333333);
 }
