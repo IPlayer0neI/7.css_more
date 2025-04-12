@@ -1,7 +1,7 @@
 {
   "name": "7.css",
   "version": "0.18.0",
-  "description": "A design system for building faithful recreations of the Windows 7 UI.",
+  "description": "Added features: location-bar for window title-bar, shortcut and taskbar.",
   "main": "dist/7.css",
   "files": [
     "dist/gui",
